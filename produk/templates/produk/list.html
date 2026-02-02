@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Produk</title>
+</head>
+<body>
+    <h1>Daftar Produk</h1>
+    
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Kategori</th>
+            <th>Aksi</th>
+        </tr>
+        {% for p in produk %}
+        <tr>
+            <td>{{ p.nama_produk }}</td>
+            <td>{{ p.harga }}</td>
+            <td>{{ p.kategori.nama_kategori }}</td>
+            <td>
+                <a href="{% url 'edit' p.id_produk %}">Edit</a>
+                <a href="{% url 'hapus' p.id_produk %}" onclick="return confirm('Yakin hapus?')">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <br>
+    <a href="{% url 'tambah' %}">Tambah Produk Baru</a>
+</body>
+</html>
