@@ -28,24 +28,29 @@ TEKNOLOGI YANG DIGUNAKAN
 STRUKTUR PROJECT
 
 fastprint_test/
-│
 ├── fastprint_test/
-│   └── settings.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
 │
 ├── produk/
+│   ├── migrations/
+│   ├── management/
+│   │   └── commands/
+│   │       └── fetch_produk.py
+│   ├── templates/
+│   │   └── produk/
+│   │       └── produk_list.html
 │   ├── models.py
 │   ├── views.py
-│   ├── urls.py
-│   └── management/
-│       └── commands/
-│           └── fetch_produk.py
-│
-├── templates/
-│   └── produk/
-│       └── produk_list.html
+│   ├── forms.py
+│   └── urls.py
 │
 ├── manage.py
-└── README.md
+├── README.md
+└── .gitignore
+
 
 ==================================================
 
@@ -59,14 +64,14 @@ Database menggunakan MySQL melalui XAMPP (phpMyAdmin).
 2. Konfigurasi database pada settings.py:
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fastprint_db',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+   'default': {
+      'ENGINE': 'django.db.backends.mysql',
+      'NAME': 'fastprint_db',
+      'USER': 'root',
+      'PASSWORD': '',
+      'HOST': 'localhost',
+      'PORT': '3306',
+      }
 }
 
 ==================================================
